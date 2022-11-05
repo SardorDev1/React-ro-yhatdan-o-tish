@@ -2,6 +2,8 @@ import React, { useCallback, useContext } from 'react';
 import { withRouter, Redirect, Link } from 'react-router-dom';
 import config from './firebase/config';
 import { AuthContext } from './context/Context'
+
+import { signInWithGoogle } from './firebase/config';
 import '../assets/style.css'
 const Login = ({ history }) => {
 
@@ -41,6 +43,7 @@ confirm(err)
           <button  className='btn btn-outline-success w-100' type="submit">Kirish</button>
        <p ></p>
         </form>
+        <button className='btnSignwithGoogle' onClick={signInWithGoogle} >Sign in width Google</button>
         <p className='pageup text-center mt-5' >      <Link className="linkPage" to="/register">Ro'yhatdan O'tmaganman !!!</Link>
       </p>
       </div>

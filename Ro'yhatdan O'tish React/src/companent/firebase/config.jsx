@@ -10,5 +10,13 @@ const config = firebase.initializeApp({
   appId: "1:855080882869:web:2e225173f29cd85c07a4fc",
   measurementId: "G-PWWQ56JRWZ"
 });
+export const auth = firebase.auth();
+
+/**GOOGLE AUTH INTEGRATION CODELARI */
+
+const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: 'select_account' });
+
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default config;

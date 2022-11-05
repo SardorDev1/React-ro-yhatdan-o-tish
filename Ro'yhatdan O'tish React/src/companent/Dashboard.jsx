@@ -1,23 +1,33 @@
-import React from 'react';
-import config from './firebase/config';
-import '../assets/style.css'
-// import server from './server/server'
-import { BrowserRouter , Router , Route } from 'react-router-dom';
-const Dashboard = () => {
+import React from "react";
+import { auth } from "./firebase/config";
+
+
+
+const Dashboard  = ({ user }) => {
+
+
     return (
-        <div>
-         <BrowserRouter>
-  <Router>       
-<Route path="/" component={} />
-<Route path="/all" element={Api_max} />
-</Router>
 
 
-</BrowserRouter>
-            <button className='exit btn btn-danger' onClick={() => config.auth().signOut()}>Sign out</button>   
-        </div>
-    );
-};
+
+        <>
+   {/* <div className="accountInfo">
+                    <h1>Salom, <span></span>{user.displayName}</h1>
+                    <img src={user.photoURL} alt="photo" />
+               </div> */}
+
+            <button className='exit btn btn-danger' onClick={() => auth().signOut()}>Sign out</button>
+        </>
+    )
+
+}
 
 
-export default Dashboard;
+
+
+
+
+export default Dashboard
+
+
+

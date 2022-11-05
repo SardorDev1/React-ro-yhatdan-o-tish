@@ -10,7 +10,14 @@ const Signup = ({ history }) => {
 
     const handleSignUp = useCallback(async event => {
         event.preventDefault()
-        const { email, password } = event.target.elements;
+        const { email, password , number } = event.target.elements;
+
+   if(number.value === "" ){
+    confirm("Iltomos Telefon Raqamingizni Kiriting ")
+    window.location.reload()
+   }
+
+
         try {
             await config
                 .auth()
@@ -19,7 +26,8 @@ const Signup = ({ history }) => {
 
             history.push("/");
         } catch (error) {
-            console.log(error)
+          const err = error.message;
+    alert(err)
         }
     }, [history])
     return (
